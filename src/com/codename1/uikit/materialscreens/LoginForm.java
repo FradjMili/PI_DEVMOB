@@ -32,6 +32,7 @@ import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.FlowLayout;
 import com.codename1.ui.util.Resources;
+import com.codename1.uikit.Entite.User;
 
 /**
  * The Login form
@@ -39,12 +40,13 @@ import com.codename1.ui.util.Resources;
  * @author Shai Almog
  */
 public class LoginForm extends Form {
+    public static User UserConnected = new User();
     public LoginForm(Resources theme) {
         super(new BorderLayout(BorderLayout.CENTER_BEHAVIOR_CENTER_ABSOLUTE));
         setUIID("LoginForm");
         Container welcome = FlowLayout.encloseCenter(
-                new Label("Welcome, ", "WelcomeWhite"),
-                new Label("Jennifer", "WelcomeBlue")
+                new Label("Welcome, ", "WelcomeWhite")
+             //  new Label("Jennifer", "WelcomeBlue")
         );
         
         getTitleArea().setUIID("Container");
@@ -55,8 +57,8 @@ public class LoginForm extends Form {
         Label profilePicLabel = new Label(profilePic, "ProfilePic");
         profilePicLabel.setMask(mask.createMask());
         
-        TextField login = new TextField("jennifer.wilson88@gmail.com", "Login", 20, TextField.EMAILADDR) ;
-        TextField password = new TextField("password", "Password", 20, TextField.PASSWORD) ;
+        TextField login = new TextField("mili", "Login", 20, TextField.EMAILADDR) ;
+        TextField password = new TextField("mili", "Password", 20, TextField.PASSWORD) ;
         login.getAllStyles().setMargin(LEFT, 0);
         password.getAllStyles().setMargin(LEFT, 0);
         Label loginIcon = new Label("", "TextField");
@@ -70,7 +72,8 @@ public class LoginForm extends Form {
         loginButton.setUIID("LoginButton");
         loginButton.addActionListener(e -> {
             Toolbar.setGlobalToolbar(false);
-            new WalkthruForm(theme).show();
+               new First(theme).show();
+
             Toolbar.setGlobalToolbar(true);
         });
         
@@ -103,4 +106,6 @@ public class LoginForm extends Form {
         by.setScrollableY(true);
         by.setScrollVisible(false);
     }
+
+   
 }

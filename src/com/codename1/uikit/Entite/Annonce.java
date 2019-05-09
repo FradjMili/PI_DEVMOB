@@ -5,6 +5,8 @@
  */
 package com.codename1.uikit.Entite;
 
+import java.util.Date;
+
 /**
  *
  * @author USER
@@ -13,8 +15,8 @@ public class Annonce {
     private int id;
     private int iduserA;
     private String speciality;
- private String datedebut;
- private String datefin;
+ public java.util.Date datedebut;
+    private java.util.Date datefin;
     private String description;
     private String titre;
     private String Image;
@@ -116,40 +118,30 @@ public class Annonce {
         this.etatannonce = etatannonce;
     }
 
-    public String getDatedebut() {
+    public Date getDatedebut() {
         return datedebut;
     }
+     
 
-    public void setDatedebut(String datedebut) {
+   public void setDatedebut(Date datedebut) {
         this.datedebut = datedebut;
     }
 
-    public String getDatefin() {
+    public Date getDatefin() {
         return datefin;
     }
 
-    public void setDatefin(String datefin) {
+    public void setDatefin(Date datefin) {
         this.datefin = datefin;
     }
 
-    public Annonce(int id, int iduserA, String speciality, String datedebut, String datefin, String description, String titre, int salaire, int etatannonce) {
-        this.id = id;
-        this.iduserA = iduserA;
-        this.speciality = speciality;
-        this.datedebut = datedebut;
-        this.datefin = datefin;
-        this.description = description;
-        this.titre = titre;
-        this.salaire = salaire;
-        this.etatannonce = etatannonce;
-    }
-
-  
     @Override
     public String toString() {
-        return "Annonce{" + "id=" + id + ", iduserA=" + iduserA + ", speciality=" + speciality + ", description=" + description + ", titre=" + titre + ", salaire=" + salaire + ", etatannonce=" + etatannonce + '}';
+        return "Annonce{" + "id=" + id + ", iduserA=" + iduserA + ", speciality=" + speciality + ", datedebut=" + datedebut + ", datefin=" + datefin + ", description=" + description + ", titre=" + titre + ", Image=" + Image + ", salaire=" + salaire + ", etatannonce=" + etatannonce + '}';
     }
-    
+
+ 
+
     
     
 }

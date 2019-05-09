@@ -27,6 +27,7 @@ import com.codename1.ui.Label;
 import com.codename1.ui.plaf.UIManager;
 import com.codename1.ui.util.Resources;
 import com.codename1.io.Log;
+import com.codename1.sendgrid.SendGrid;
 import com.codename1.ui.Toolbar;
 import java.io.IOException;
 
@@ -50,13 +51,15 @@ public class MSUIKit {
     }
     
     public void start() {
+       
         if(current != null){
             current.show();
             return;
         }
-        new LoginForm(theme).show();
-       // HomeForm h = new HomeForm();
-       // h.getF().show();
+       new LoginForm(theme).show();
+       
+    //new ListAnnForm(theme).show();
+    //new AjoutAnnForm(theme).show();
     }
 
     public void stop() {
